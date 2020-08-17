@@ -1,0 +1,14 @@
+stages:
+  - deploy
+
+variables:
+  K8S_AWS_KEY: "${K8S_AWS_KEY}"
+  K8S_AWS_SECRET: "${K8S_AWS_SECRET}"
+  K8S_AWS_REGION: "${K8S_AWS_REGION}"
+  K8S_CLUSTER_NAME: "${K8S_CLUSTER_NAME}"
+
+deploy:
+  stage: deploy
+  image: dwdraju/eks-kubectl-helm
+  script:
+    - kubectl get pods
